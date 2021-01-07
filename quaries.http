@@ -1,0 +1,9 @@
+GET http://localhost:4004/catalog/Products
+X-CSRF-Token: fetch
+
+###
+POST http://localhost:4004/catalog/PostDataSet
+Content-Type: application/json
+Accept: application/json
+
+{"Data": "test"}

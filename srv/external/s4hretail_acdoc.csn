@@ -1,0 +1,775 @@
+{
+  "definitions": {
+    "s4hretail_acdoc": {
+      "kind": "service"
+    },
+    "s4hretail_acdoc.CurrencyamountSet": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ItemnoAcc": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "DocNo": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "CurrType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Currency": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "CurrencyIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "AmtDoccur": {
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 4
+        },
+        "ExchRate": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "ExchRateV": {
+          "type": "cds.Decimal",
+          "precision": 9,
+          "scale": 5
+        },
+        "AmtBase": {
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 4
+        },
+        "DiscBase": {
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 4
+        },
+        "DiscAmt": {
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 4
+        },
+        "TaxAmt": {
+          "type": "cds.Decimal",
+          "precision": 23,
+          "scale": 4
+        },
+        "AmtDoccurLong": {
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 8
+        },
+        "AmtBaseLong": {
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 8
+        },
+        "DiscBaseLong": {
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 8
+        },
+        "DiscAmtLong": {
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 8
+        },
+        "TaxAmtLong": {
+          "type": "cds.Decimal",
+          "precision": 31,
+          "scale": 8
+        }
+      }
+    },
+    "s4hretail_acdoc.DocumentHeaderSet": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ObjType": {
+          "key": true,
+          "type": "cds.String",
+          "length": 5
+        },
+        "ObjKey": {
+          "key": true,
+          "type": "cds.String",
+          "length": 20
+        },
+        "ObjSys": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "DocNo": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "Username": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "HeaderTxt": {
+          "type": "cds.String",
+          "length": 25
+        },
+        "CompCode": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "DocDate": {
+          "type": "cds.Timestamp"
+        },
+        "PstngDate": {
+          "type": "cds.Timestamp"
+        },
+        "TransDate": {
+          "type": "cds.Timestamp"
+        },
+        "FiscYear": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FisPeriod": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "DocType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "RefDocNo": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "AcDocNo": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ObjKeyR": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "ReasonRev": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CompoAcc": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "RefDocNoLong": {
+          "type": "cds.String",
+          "length": 35
+        },
+        "AccPrinciple": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "NegPostng": {
+          "type": "cds.Boolean"
+        },
+        "ObjKeyInv": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "ItemAmounts": {
+          "type": "cds.Association",
+          "target": "s4hretail_acdoc.CurrencyamountSet"
+        },
+        "DocItems": {
+          "type": "cds.Association",
+          "target": "s4hretail_acdoc.AccountglSet"
+        }
+      }
+    },
+    "s4hretail_acdoc.AccountglSet": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "ItemnoAcc": {
+          "key": true,
+          "type": "cds.String",
+          "length": 10
+        },
+        "DocNo": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "GlAccount": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ItemText": {
+          "type": "cds.String",
+          "length": 50
+        },
+        "StatCon": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "LogProc": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "AcDocNo": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "RefKey1": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "RefKey2": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "RefKey3": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "AcctKey": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "AcctType": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "DocType": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CompCode": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BusArea": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FuncArea": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Plant": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "FisPeriod": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "FiscYear": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "PstngDate": {
+          "type": "cds.Timestamp"
+        },
+        "ValueDate": {
+          "type": "cds.Timestamp"
+        },
+        "FmArea": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "Customer": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "CshdisInd": {
+          "type": "cds.Boolean"
+        },
+        "VendorNo": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AllocNmbr": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "TaxCode": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Taxjurcode": {
+          "type": "cds.String",
+          "length": 15
+        },
+        "ExtObjectId": {
+          "type": "cds.String",
+          "length": 34
+        },
+        "BusScenario": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "Costobject": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "Costcenter": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Acttype": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "ProfitCtr": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartPrctr": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Network": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "WbsElement": {
+          "type": "cds.String",
+          "length": 24
+        },
+        "Orderid": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "OrderItno": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "RoutingNo": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Activity": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CondType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "CondCount": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "CondStNo": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Fund": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "FundsCtr": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "CmmtItem": {
+          "type": "cds.String",
+          "length": 24
+        },
+        "CoBusproc": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "AssetNo": {
+          "type": "cds.String",
+          "length": 12
+        },
+        "SubNumber": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "BillType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesOrd": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "SOrdItem": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "DistrChan": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Division": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "Salesorg": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SalesGrp": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SalesOff": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "SoldTo": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "DeCreInd": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "PElPrctr": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "Xmfrw": {
+          "type": "cds.Boolean"
+        },
+        "Quantity": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "BaseUom": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "BaseUomIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "InvQty": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "InvQtySu": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "SalesUnit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "SalesUnitIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PoPrQnt": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "PoPrUom": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "PoPrUomIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "EntryQnt": {
+          "type": "cds.Decimal",
+          "precision": 13,
+          "scale": 3
+        },
+        "EntryUom": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "EntryUomIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Volume": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "Volumeunit": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "VolumeunitIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "GrossWt": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "NetWeight": {
+          "type": "cds.Decimal",
+          "precision": 15,
+          "scale": 3
+        },
+        "UnitOfWt": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "UnitOfWtIso": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "ItemCat": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "Material": {
+          "type": "cds.String",
+          "length": 18
+        },
+        "MatlType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "MvtInd": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "RevalInd": {
+          "type": "cds.Boolean"
+        },
+        "OrigGroup": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "OrigMat": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "SerialNo": {
+          "type": "cds.String",
+          "length": 2
+        },
+        "PartAcct": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "TrPartBa": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "TradeId": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "ValArea": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValType": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "AsvalDate": {
+          "type": "cds.Timestamp"
+        },
+        "PoNumber": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PoItem": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "ItmNumber": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "CondCategory": {
+          "type": "cds.String",
+          "length": 1
+        },
+        "FuncAreaLong": {
+          "type": "cds.String",
+          "length": 16
+        },
+        "CmmtItemLong": {
+          "type": "cds.String",
+          "length": 24
+        },
+        "GrantNbr": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "CsTransT": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "Measure": {
+          "type": "cds.String",
+          "length": 24
+        },
+        "Segment": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerSegment": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ResDoc": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ResItem": {
+          "type": "cds.String",
+          "length": 3
+        },
+        "BillingPeriodStartDate": {
+          "type": "cds.Timestamp"
+        },
+        "BillingPeriodEndDate": {
+          "type": "cds.Timestamp"
+        },
+        "PpaExInd": {
+          "type": "cds.Boolean"
+        },
+        "Fastpay": {
+          "type": "cds.Boolean"
+        },
+        "PartnerGrantNbr": {
+          "type": "cds.String",
+          "length": 20
+        },
+        "BudgetPeriod": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerBudgetPeriod": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "PartnerFund": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ItemnoTax": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "PaymentType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ExpenseType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ProgramProfile": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "MaterialLong": {
+          "type": "cds.String",
+          "length": 40
+        },
+        "Housebankid": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "Housebankacctid": {
+          "type": "cds.String",
+          "length": 5
+        },
+        "PersonNo": {
+          "type": "cds.String",
+          "length": 8
+        },
+        "AcrobjType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "AcrobjId": {
+          "type": "cds.String",
+          "length": 32
+        },
+        "AcrsubobjId": {
+          "type": "cds.String",
+          "length": 32
+        },
+        "AcritemType": {
+          "type": "cds.String",
+          "length": 11
+        },
+        "Valobjtype": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ValobjId": {
+          "type": "cds.String",
+          "length": 32
+        },
+        "ValsubobjId": {
+          "type": "cds.String",
+          "length": 32
+        },
+        "TaxCalcDate": {
+          "type": "cds.Timestamp"
+        },
+        "TaxCalcDtFrom": {
+          "type": "cds.Timestamp"
+        },
+        "ServiceDocType": {
+          "type": "cds.String",
+          "length": 4
+        },
+        "ServiceDocId": {
+          "type": "cds.String",
+          "length": 10
+        },
+        "ServiceDocItemId": {
+          "type": "cds.String",
+          "length": 6
+        },
+        "BdgtAccount": {
+          "type": "cds.String",
+          "length": 10
+        }
+      }
+    },
+    "s4hretail_acdoc.GetDataSet": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Matnr": {
+          "key": true,
+          "type": "cds.String",
+          "length": 40
+        },
+        "Matkl": {
+          "type": "cds.String",
+          "length": 9
+        }
+      }
+    },
+    "s4hretail_acdoc.PostDataSet": {
+      "kind": "entity",
+      "@cds.persistence.skip": true,
+      "elements": {
+        "Data": {
+          "key": true,
+          "type": "cds.LargeString"
+        }
+      }
+    }
+  }
+}
